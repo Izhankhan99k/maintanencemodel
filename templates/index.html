@@ -5,7 +5,8 @@
     <title>Maintenance model</title>
 </head>
 <body>
-<h2>Maintenance prediction model</h2>
+<h1>Maintenance prediction model</h1>
+<h3>M001:DRILL     M002:WELDER    M003:CNC    M004:CONVEYOR </h3> <br>
 <form action="/predict" method="POST">
     <label for="machine_id">Machine ID</label>
     <select name="machine_id" required>
@@ -28,12 +29,14 @@
     <br><br>
 
 
-    <input type="submit" value="predict">
+    <input type="submit" value="predict"  style="width: 80px; height: 30px;">
 
   {% if prediction %}
     <h2>Prediction Result:</h2>
-    <p><strong>{{ prediction }}</strong></p>
-    <h2>To know how this model works</h2>
+    <h2><p><strong>{{ prediction }}</strong></p></h2>
+    <h4>To know how this model works
+    <a href="https://github.com/Izhankhan99k/maintanencemodel">Check my repo</a></h4>
+
   {% endif %}
 
 </form>
