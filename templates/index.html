@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Maintenance model</title>
+</head>
+<body>
+<h2>Maintenance prediction model</h2>
+<form action="/predict" method="POST">
+    <label for="machine_id">Machine ID</label>
+    <select name="machine_id" required>
+        {% for id in machine_ids %}
+      <option value="{{ id }}">{{ id }}</option>
+    {% endfor %}
+    </select>
+    <br><br>
+
+    <label for="Vibration level" >Vibration Level</label>
+        <input type="number" name="Vibration level" min="0" max="100">
+    <br><br>
+
+    <label for="Temperature" >Temperature</label>
+        <input type="number" name="Temperature" min="0" max="100">
+    <br><br>
+
+    <label for="Power_consumption">Power Consumption (1–30 kW):</label>
+    <input type="number" name="Power_consumption" min="1" max="30" step="1" required>
+    <br><br>
+
+
+    <input type="submit" value="predict">
+
+  {% if prediction %}
+    <h2>Prediction Result:</h2>
+    <p><strong>{{ prediction }}</strong></p>
+    <h2>To know how this model works</h2>
+  {% endif %}
+
+</form>
+</body>
+</html>
