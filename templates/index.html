@@ -16,11 +16,11 @@
     </select>
     <br><br>
 
-    <label for="Vibration level" >Vibration Level</label>
+    <label for="Vibration level" >Vibration Level(0-20)</label>
         <input type="number" name="Vibration level" min="0" max="100">
     <br><br>
 
-    <label for="Temperature" >Temperature</label>
+    <label for="Temperature" >Temperature (0-100°C)</label>
         <input type="number" name="Temperature" min="0" max="100">
     <br><br>
 
@@ -30,12 +30,12 @@
 
 
     <input type="submit" value="predict"  style="width: 80px; height: 30px;">
-
+  <br><br>
   {% if prediction %}
-    <h2>Prediction Result:</h2>
-    <h2><p><strong>{{ prediction }}</strong></p></h2>
-    <h4>To know how this model works
-    <a href="https://github.com/Izhankhan99k/maintanencemodel">Check my repo</a></h4>
+    <h2>Prediction Result:<p><strong>{{ prediction }}</strong></p></h2>
+
+    <h4>To know how this model works <a href="https://github.com/Izhankhan99k/maintanencemodel">Check my github repo IzhanKhan99k</a> </h4>
+
 
   {% endif %}
 
